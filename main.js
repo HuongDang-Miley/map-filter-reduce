@@ -99,12 +99,35 @@ let businesses = [
     { company: 'Citibank', startYear: 2010 },
 ];
 
-let sort = businesses
-    .filter((company) => company.startYear > 2000)
-    sort
-for (const wine of businesse)
-// .sort((a,b) => a-b)    
-sort
+let companyAfter2000 = businesses
+.filter((company) => company.startYear > 2000)
+// .map((item) => Object.values(item))
+// .sort((a[1],b[1]) => a[1]-b[1])
+.sort((a.startYear, b.startYear) => a.startYear -  b.startYear)
+// .map
+let result = []
+for (const item in companyAfter2000) {
+    result.push(businesses[item])
+}
+result
+
+arr = ['2', '4', '5']
+for (const index in arr ) {
+    index
+}
+// let sortArr = result.push(business[])
+// .sort((item1[1], item1[1]) => item2[1] - item1[1])
+
+companyAfter2000
+// convert obj to array entries
+
+// let arr = [[1,2],[4,3]]
+// arr.sort((a[1],b[1]) => a[1]-b[1])
+// arr
+companyAfter2000
+
+// Short by array entries
+// convertback to object
 
 // Only numbers to show it will be sorted.
 const testObj = {
@@ -114,17 +137,7 @@ const testObj = {
     '3000': 'Articel4',
 };
 
-// I'll explain what reduces does after the answer.
-console.log(
-    Object.keys(testObj)
-    .reduce((accumulator, currentValue) => {
-            accumulator[currentValue] = testObj[currentValue];
-            return accumulator;
-        }, {}));
 
-let test5 = [1,2,4,5]
-test5.sort((a,b)=>b-a)
-test5
 
 /**
  * expected output:
@@ -163,12 +176,22 @@ testTimes5
 const arr1 = [5, 3, 2, 5, 6]; //should be {'5':2,'3':1,'2':1,'6':1}
 const arr2 = [3, 1, 2, 5, 2, 5, 7, 5] // should be { '1': 1, '2': 2, '3': 1, '5': 3, '7': 1 }
 
-function obj(arr){
-    //map through array, make each element a key.
-    arr.reduce((accumulator, currentValue, index, array) => {
-        accumulator[currentValue] = currentValue
-    },{})
+
+function count(arr) {
+    // implicit
+    let result = {}
+    let count = 1
+    for (const num of arr) {
+        num in result
+        ? result[num] += count
+        : result[num] = count
+    }
+    return JSON.stringify(result)
+
+    // explicit
+    // Don't know how to use reduce() in this problem
 }
 
-let test6 = obj(arr2)
+let test6 = count(arr2)
 test6
+
