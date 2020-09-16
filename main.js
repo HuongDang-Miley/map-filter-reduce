@@ -101,7 +101,8 @@ let businesses = [
 
 let sort = businesses
     .filter((company) => company.startYear > 2000)
-Object.keys(sort)
+    sort
+for (const wine of businesse)
 // .sort((a,b) => a-b)    
 sort
 
