@@ -84,8 +84,7 @@ function average(arr) {
     )
 }
 
-let testAvg = average(nums4)
-testAvg
+console.log(average(nums4))
 
 
 // 4.  Choose all the companies that started after 2000 and sort them ascending
@@ -99,55 +98,13 @@ let businesses = [
     { company: 'Citibank', startYear: 2010 },
 ];
 
-let companyAfter2000 = businesses
-.filter((company) => company.startYear > 2000)
-// .map((item) => Object.values(item))
-// .sort((a[1],b[1]) => a[1]-b[1])
-.sort((a.startYear, b.startYear) => a.startYear -  b.startYear)
-// .map
-let result = []
-for (const item in companyAfter2000) {
-    result.push(businesses[item])
-}
-result
+let sortResult = businesses
+//filter only company started after 2000
+.filter((item) => item.startYear > 2000)
+//sort company by ascending order of year started 
+.sort((a,b) => a.startYear - b.startYear)
 
-arr = ['2', '4', '5']
-for (const index in arr ) {
-    index
-}
-// let sortArr = result.push(business[])
-// .sort((item1[1], item1[1]) => item2[1] - item1[1])
-
-companyAfter2000
-// convert obj to array entries
-
-// let arr = [[1,2],[4,3]]
-// arr.sort((a[1],b[1]) => a[1]-b[1])
-// arr
-companyAfter2000
-
-// Short by array entries
-// convertback to object
-
-// Only numbers to show it will be sorted.
-const testObj = {
-    '2000': 'Articel1',
-    '4000': 'Articel2',
-    '1000': 'Articel3',
-    '3000': 'Articel4',
-};
-
-
-
-/**
- * expected output:
- * {
- * '1000': 'Articel3',
- * '2000': 'Articel1',
- * '3000': 'Articel4',
- * '4000': 'Articel2' 
- *  } 
- */
+console.log(sortResult)
 
 
 // 5.  COMPUTE INTEGERS
@@ -159,11 +116,12 @@ const testObj = {
 
 
 const times5 = function (arr) {
-    return arr.map((num) => num * 5)
+    return arr
+    .filter((num) => num > 0 && num % 1 === 0 )
+    .map((num) => num * 5)
 }
 
-let testTimes5 = times5([1, 2, 3, 4])
-testTimes5
+console.log(times5([1,2,undefined,6]))
 
 
 // 6.
@@ -187,11 +145,7 @@ function count(arr) {
         : result[num] = count
     }
     return JSON.stringify(result)
-
-    // explicit
-    // Don't know how to use reduce() in this problem
 }
 
-let test6 = count(arr2)
-test6
+console.log(count(arr2))
 
